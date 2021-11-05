@@ -1,0 +1,46 @@
+#square{    
+    margin: auto;    
+    border: 5% solid #4066d0;
+    padding: 10%;
+    border-radius: 10%;
+    position: fixed;
+    size: 10%;
+}
+
+.container{
+    margin: 20%;
+}
+
+#loginText{
+    color: white;
+    size: 10%;
+    text-align: center;
+}
+
+#placeName{
+    text-align: right;
+}
+
+.logButton{
+    margin: 8px; 
+    background-color: #4066d0; 
+    color: white; 
+    border: #4066d0;
+}
+
+#navbar{
+    background-color: #4066d0; 
+    color: white; 
+    text-align: right;
+    height: 50px;
+}
+
+#pageTitle{
+    color: #4066d0;
+    margin: 30px;
+    margin-left: 50px;    
+}
+
+#pageAgenda{
+    color: #4066d0;    
+}
