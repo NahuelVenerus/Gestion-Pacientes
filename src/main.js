@@ -1,28 +1,28 @@
- //import { createApp } from 'vue'
- import Vue from 'vue'
+ import { createApp } from 'vue'
+ //import Vue from 'vue'
 import App from './App.vue'
 import router from './router';
-import store from './store';
+//import store from './store';
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 
  import 'bootstrap/dist/css/bootstrap.css'
  import 'bootstrap';
 
-//  const app = createApp(App)
-// app.use(router);
+  const app = createApp(App)
+ app.use(router);
 // app.use(store);
 
-// app.mount('#app')
+ app.mount('#app')
 
 
-Vue.config.productionTip = false
+//Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+/*new Vue({
   el: '#app',
   router,
   store,
   template: '<App/>',
   components: { App }
-})
+})*/
