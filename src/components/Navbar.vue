@@ -14,6 +14,9 @@
         <li class="nav-item">
           <router-link class="nav-link active" to="mifichamedica">Mi Ficha</router-link>
         </li>
+         <li class="nav-item">
+          <router-link class="nav-link active" to="contadores">Contadores/Graficos</router-link>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
