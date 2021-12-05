@@ -13,6 +13,11 @@
     </div>
    
 </template>
+<style scoped>
+.Historial{
+    padding: 0 50px;
+}
+</style>
 <script>
 
 import ItemHistorial from '../components/ItemHistorial.vue'

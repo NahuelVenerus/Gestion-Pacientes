@@ -10,7 +10,7 @@
       Nombre:
     </div>
     <div class="col">
-      {{paciente.Nombre}}
+      {{$store.state.usuario.nombre}}
     </div>
     <div class="col">
       Apellido:

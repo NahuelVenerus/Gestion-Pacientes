@@ -14,8 +14,16 @@ const store = createStore({
           error:false,
           metodo:""
       },
+      esPaciente:false,
+      esProfesional:false,
       loading:false,
     }
+  },
+  actions:{
+
+  },
+  getters:{
+
   },
   mutations: {
     increment (state) {
