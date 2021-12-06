@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
-
+import axios from 'axios';
 // Create a new store instance.
+const localhost = "http://localhost:3000";
 const store = createStore({
   state () {
     return {
@@ -10,6 +11,7 @@ const store = createStore({
           fechaNacimiento:"",
 
       },
+      historial:[],
       llamada:{
           error:false,
           metodo:""
@@ -20,14 +22,33 @@ const store = createStore({
     }
   },
   actions:{
-
+    async GET_HISTORIAL_ACTIONS(context){
+      const res = await axios.get(`${localhost}/historial`);
+      console.log(res)
+      if(res.status == 200){
+        context.commit("SET_HISTORIAL", res.data);
+      }else{
+        const payload = {
+          loading:false,
+        }
+        context.commit("SET_ERROR_CALL", payload);
+      }
+      
+      
+      
+    }
   },
   getters:{
-
+    GET_HISTORIAL(state){
+      return state.historial;
+    }
   },
   mutations: {
-    increment (state) {
-      state.count++
+    SET_HISTORIAL (state, historial) {
+      state.historial = historial;
+    },
+    SET_ERROR_CALL (state, payload){
+      state.loading = payload.loading;
     }
   }
 })
