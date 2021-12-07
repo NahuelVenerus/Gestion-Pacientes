@@ -38,12 +38,12 @@ export default {
             {
                   id:"1",
                   hora:"9:00",
-                  estado:'activo'
+                  estado:'desactivado'
               },
               {
                   id:"2",
                   hora:"10:00",
-                  estado:'activo'
+                  estado:'desactivado'
               },
               {
                   id:"3",
@@ -53,12 +53,12 @@ export default {
               {
                   id:"4",
                   hora:"12:00",
-                  estado:'activo'
+                  estado:'desactivado'
               },
               {
                   id:"5",
                   hora:"13:00",
-                  estado:'activo'
+                  estado:'desactivado'
               },
               {
                   id:"6",
@@ -68,12 +68,12 @@ export default {
               {
                   id:"7",
                   hora:"15:00",
-                  estado:'activo'
+                  estado:'desactivado'
               },
               {
                   id:"8",
                   hora:"16:00",
-                  estado:'activo'
+                  estado:'desactivado'
               }
         ],
         date: new Date()

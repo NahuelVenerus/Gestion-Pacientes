@@ -47,6 +47,7 @@
 <script>
 import DatePicker from 'vue3-datepicker'
 import Horarios from './Horarios'
+import axios from 'axios'
 
 export default {
     name: 'AgendarTurno',
@@ -57,12 +58,26 @@ export default {
     methods: {
       enviarDate() {
         Horarios.date = this.date
+      },
+
+      async GET_TURNOS_PACIENTE(){
+      const res = await axios.get('http://localhost:3000/turnospaciente');
+      console.log(res)
+      if(res.status == 200){
+        this.turnosPaciente = res.data;
+      }else{
+        console.log("Trayendo turnos de pacientes")
       }
+    }
     },
     data:() => {
       return{
-          date: null
+          date: null,
+          turnosPaciente: []
       }
+  },
+  mounted() {
+    this.GET_TURNOS_PACIENTE();
   }
 };
 

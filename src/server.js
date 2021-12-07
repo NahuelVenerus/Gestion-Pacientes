@@ -1,6 +1,7 @@
 const express =  require('express');
 const cors =  require('cors');
 const app = express();
+const moment = require("moment");
 
 app.use(cors());
 
@@ -22,8 +23,21 @@ const historial = [
     },
   ];
 
+const turnosPaciente = [
+    {
+        id:'1',
+        fecha: moment("2021-12-07"),
+        horarioInicio: '9:00',
+        idPaciente: 100,
+        descripcion: 'Fiebre'
+    }
+];
+
 app.get('/login', (req,res) => {
     res.json({token:"1111111"})
+})
+app.get('/turnospaciente', (req,res) => {
+    res.json(turnosPaciente)
 })
 app.get('/historial', (req,res) => {
     // throw new Exception("esto es un error");
