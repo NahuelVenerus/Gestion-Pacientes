@@ -1,5 +1,5 @@
 <template>
-    <div class="caja" @mouseover="hover=true">
+    <div :class="estado == 'activo' ? 'activa' : 'desactivada'" class="caja" @mouseover="hover=true">
         {{ hora }}
     </div>
 </template>
@@ -8,7 +8,8 @@
 export default {
   name: 'ItemHorario',
   props: {
-    hora: String
+    hora: String,
+    estado: String
   },
   data:() => {
       return{
@@ -23,18 +24,21 @@ export default {
         padding: 30px 0;
         width: 120px;
         text-align: center;
-        background: rgb(231, 231, 231);
         margin: 20px;
         display: inline-block;
     }
 
-    .caja:hover {
-        padding: 30px 0;
-        width: 120px;
-        text-align: center;
-        color: white;
-        background: #b9b9b9;
-        margin: 20px;
-        display: inline-block;
+    .activa {
+        background-color: rgb(5, 238, 5);
+        border: 3px solid rgb(5, 238, 5);
     }
+
+    .activa:hover {
+        border: 3px solid rgb(0, 124, 0);
+    }
+
+    .desactivada {
+        background-color: rgb(231, 231, 231);
+    }
+
 </style>
