@@ -57,7 +57,7 @@
           <input
             type="submit"
             value="Enviar"
-            onclick="enviar()"
+            @click="enviar()"
             class="form-control"
             id="boton"
           />
@@ -117,11 +117,21 @@ export default {
 
         for (let index = 0; index < this.turnosPaciente.length; index++) {
           if (moment(this.turnosPaciente[0].fecha).format("YYYY-MM-DD") == moment(this.date).format("YYYY-MM-DD")) {
-            this.desactivarHorario(this.turnosPaciente[index].hora);
+            this.desactivarHorario(this.turnosPaciente[index].horarioInicio);
           }
         }
       }
     },
+
+    enviar() {
+      return {
+        id: this.turnosPaciente.length+1,
+        idPaciente: '',
+        fecha: this.date,
+        horarioInicio: this.horario,
+        comentario: this.comentario
+      }
+    }
   },
 
   data: () => {
@@ -129,7 +139,7 @@ export default {
       date: null,
       hoy: new Date(),
       turnosPaciente: [],
-      horario: '321',
+      horario: '',
       comentario: '',
       horarios: [
         {

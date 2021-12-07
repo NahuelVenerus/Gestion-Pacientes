@@ -3,7 +3,7 @@
     :class="estado == 'activo' ? 'activa' : 'desactivada'"
     class="caja"
     @mouseover="hover = true"
-    @click="horario=hora"
+    @click="enviarHorario()"
   >
     {{ hora }}
   </div>
@@ -23,9 +23,12 @@ export default {
     };
   },
 
-  mounted() {
-    this.$emit("horario", this.horario);
-  },
+  methods: {
+      enviarHorario() {
+          this.horario = this.hora
+          this.$emit("horario", this.horario)
+      }
+  }
 };
 </script>
 
