@@ -24,16 +24,16 @@
   </div>
   <div class="row">
     <div class="col">
-      <span class="spnTitle">Fecha de Nacimiento:</span>
+      <span class="spnTitle">Fecha de Nac.:</span>
     </div>
     <div class="col">
-       {{$store.state.usuario.fechaNacimiento}}
+       {{this.GET_FECHA_NACIMIENTO}}
     </div>
     <div class="col">
       <span class="spnTitle">Edad:</span>
     </div>
     <div class="col">
-      {{$store.state.usuario.edad}}
+      {{this.GET_EDAD}}
     </div>
     <div class="col"></div>
   </div>
@@ -71,6 +71,7 @@
 }
 </style>
 <script>
+import {  mapGetters } from 'vuex'
 export default {
   name: 'FichaMedica',
   props: {
@@ -81,6 +82,9 @@ export default {
       return{
           
       }
+  },
+  computed:{
+      ...mapGetters(['GET_FECHA_NACIMIENTO', 'GET_EDAD'])
   }
 }
 </script>

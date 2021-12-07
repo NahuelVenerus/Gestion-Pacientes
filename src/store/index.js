@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios';
+import moment from 'moment'
  //import {PACIENTE, PROFESIONAL} from '../enums/roles';
 // Create a new store instance.
 
@@ -82,6 +83,12 @@ const store = createStore({
     GET_ERROR(state){
       return state.error;
     },
+    GET_FECHA_NACIMIENTO(state){
+      return moment(state.usuario.fechaNacimiento).format("DD/MM/YYYY")
+    },
+    GET_EDAD(state){
+      return moment().diff(moment(state.usuario.fechaNacimiento),"years")
+    }
   },
   mutations: {
     SET_HISTORIAL (state, historial) {
