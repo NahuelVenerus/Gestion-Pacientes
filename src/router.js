@@ -3,6 +3,9 @@ import {createWebHistory, createRouter} from 'vue-router';
 import Home from './views/Home';
 import MiFichaMedica from './views/MiFichaMedica';
 import Agenda from './views/Agenda';
+import Login from './views/Login';
+import EditarTurno from './views/EditarTurno';
+
 
 const routes = [
     {
@@ -19,6 +22,16 @@ const routes = [
         path:'/agenda',
         name:"agenda",
         component:Agenda
+    },   
+    {
+        path:'/login',
+        name:"login",
+        component:Login
+    },
+    {
+        path:'/editarturno/:id',
+        name:"editarturno",
+        component:EditarTurno
     }
 ]
 const router = createRouter({

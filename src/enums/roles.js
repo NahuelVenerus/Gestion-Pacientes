@@ -1,0 +1,7 @@
+const PACIENTE = "PACIENTE";
+const PROFESIONAL = "PROFESIONAL";
+
+export default {
+    PACIENTE,
+    PROFESIONAL
+}

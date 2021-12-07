@@ -17,6 +17,9 @@
          <li class="nav-item">
           <router-link class="nav-link active" to="agenda">Agenda</router-link>
         </li>
+        <li class="nav-item">
+          <router-link class="nav-link active" to="/editarturno/1">Editar Turno</router-link>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -33,16 +36,34 @@
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        
+        <router-link class="btn btn-primary" to="/login" v-if="!IS_LOGIN" >Login</router-link>
+        <button type="button" class="btn btn-light" v-if="IS_LOGIN" @click="onLogout">Logout</button>
       </form>
     </div>
   </div>
     </nav>
 </template>
 <script>
-
+import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'Navbar',
+   mounted(){
+    
+  },
+  methods : {
+    ...mapActions(['LOGOUT_ACTIONS']),
+    onLogout(){
+      this.LOGOUT_ACTIONS();
+      this.$router.push({path: '/login'});
+    }
+  },
+  computed:{
+    ...mapGetters(['IS_LOGIN'])
+  },
+  data:() => {
+      return{
+      }
+  }
 }
 </script>

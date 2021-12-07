@@ -1,24 +1,25 @@
 <template>
     <div class="container-fluid">
+        esto es editarturno
         <div class="row">
             <div class="col">
-                 <FichaMedica titulo="Ficha Medica" />
+                 <EditarTurnoComponent titulo="Turno" />
             </div>
             <div class="col">
-               <Historial titulo="Historial" />
+               <FichaMedica titulo="Paciente" />
             </div>
         </div>
     </div>
 </template>
 <script>
+import EditarTurnoComponent from '../components/EditarTurnoComponent.vue'
 import FichaMedica from '../components/FichaMedica.vue'
-import Historial from '../components/Historial.vue'
 
 export default {
-  name: 'MiFichaMedica',
+  name: 'EditarTurno',
   components:{
       FichaMedica,
-      Historial
+      EditarTurnoComponent
   },
   props: {
   },
