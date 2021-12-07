@@ -12,14 +12,9 @@
 
         <div class="col">
           <div
-            style="
-              border: 5px solid #4066d0;
-              padding: 10px;
-              border-radius: 5px;
-              height: 350px;
-              overflow-y: scroll;
-            "
+            class="borde"
           >
+          <h4>Próximos turnos: </h4>
             <ul>
             </ul>
           </div>
@@ -60,3 +55,12 @@ export default {
   },
 };
 </script>
+
+<style>
+.borde {
+  border: 2px solid #4066d0;
+  padding: 2%;
+  border-radius: 5px;
+  height: 100%;
+}
+</style>
