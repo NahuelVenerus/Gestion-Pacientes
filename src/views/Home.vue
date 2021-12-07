@@ -1,19 +1,19 @@
 <template>
-	<HomeProfesional v-if="this.IS_PROFESIONAL" />
+	<Contador v-if="this.IS_PROFESIONAL" />
 	<HomePaciente v-if="this.IS_PACIENTE" />
-	<Welcome v-if="!this.IS_LOGIN" />
 </template>
 
 <script>
-import HomeProfesional from "../components/HomeProfesional.vue";
+// import HomeProfesional from "../components/HomeProfesional.vue";
 import HomePaciente from "../components/HomePaciente.vue";
-
+import Contador from "./Contador.vue";
 import { mapGetters } from "vuex";
 export default {
 	name: "Home",
 	components: {
-		HomeProfesional,
+		// HomeProfesional,
 		HomePaciente,
+		Contador,
 	},
 	props: {},
 	data: () => {
