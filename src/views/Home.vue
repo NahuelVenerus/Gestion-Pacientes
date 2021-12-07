@@ -1,62 +1,33 @@
 <template>
-  <div class="container-flud">
-    <br />
-    <h3>Accesos Directos</h3>
-    <router-link to="mifichamedica" v-for="(item, index) of link" :key="index">
-      <button>{{ item }}</button>
-    </router-link>
-
-    <router-link to="turnos" v-for="(item, index) of links" :key="index">
-      <button>{{ item }}</button>
-    </router-link>
-
-    <router-link to="contadores" v-for="(item, index) of links2" :key="index">
-      <button>{{ item }}</button>
-    </router-link>
-    <div class="row">
-      <div class="col">
-        <div class="row" id="cuadro">
-          <TurnosCancelados titulo="Turnos Cancelados" />
-        </div>
-      </div>
-
-      <div class="col" id="cuadro">
-        <Historial titulo="Proximos turnos" />
-      </div>
-    </div>
-  </div>
+  <HomeProfesional v-if="this.IS_PROFESIONAL" />
+  <HomePaciente  v-if="this.IS_PACIENTE" />
 </template>
 
 <script>
-import Historial from "../components/Historial.vue";
-import TurnosCancelados from "../components/TurnosCancelados.vue";
-
+import HomeProfesional from "../components/HomeProfesional.vue";
+import HomePaciente from "../components/HomePaciente.vue";
+import {  mapGetters } from 'vuex'
 export default {
   name: "Home",
   components: {
-    Historial,
-    TurnosCancelados,
+    HomeProfesional,
+    HomePaciente,
   },
   props: {},
   data: () => {
     return {
-      link: ["Ficha Medica"],
-      links: ["Solicitar Turnos"],
-      links2: ["Contadores/Graficos"],
+
     };
-  },
+  },  
+  computed:{
+      ...mapGetters(['IS_PROFESIONAL', 'IS_PACIENTE'])
+  }
+
 };
 </script>
 
-<style>
-#app {
-  text-align: center;
-  color: #2c3e2c;
-  margin-left: 10px;
-  margin-right: 10px;
-}
+<style scoped>
 
-#cuadro {
-  margin-top: 30px;
-}
 </style>
+
+

@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
 import axios from 'axios';
 import moment from 'moment'
- //import {PACIENTE, PROFESIONAL} from '../enums/roles';
+
 // Create a new store instance.
 
 const localhost = "http://localhost:3000";
@@ -16,8 +16,8 @@ const store = createStore({
         email:"",
         celular:"",
         dni:0,
-        idLogin:0
-
+        idLogin:0,
+        rol:""
       },
       historial:[],
       llamada:{
@@ -88,6 +88,13 @@ const store = createStore({
     },
     GET_EDAD(state){
       return moment().diff(moment(state.usuario.fechaNacimiento),"years")
+    },
+    IS_PROFESIONAL(state){
+      return state.usuario.rol == "PROFESIONAL";
+    },
+    IS_PACIENTE(state){
+      console.log(state.rol)
+      return state.usuario.rol == "PACIENTE";
     }
   },
   mutations: {
@@ -115,7 +122,8 @@ const store = createStore({
         email:"",
         celular:"",
         dni:0,
-        idLogin:0
+        idLogin:0,
+        rol:""
       }
     },
     CLEAN_ERROR(state){

@@ -23,8 +23,8 @@ const logins = [
     },
     {
         id:3,
-        dni:33333333,
-        password:"12345678",
+        dni:3,
+        password:"3",
         idPaciente:null,
         idProfesional:1
     }
@@ -114,6 +114,9 @@ app.get('/login', (req,res) => {
     
 })
 app.get('/turnospaciente', (req,res) => {
+    res.json(turnosPaciente)
+})
+app.get('/turnospaciente/:idpaciente', (req,res) => {
     res.json(turnosPaciente)
 })
 app.get('/turno/:id', (req,res) => {
