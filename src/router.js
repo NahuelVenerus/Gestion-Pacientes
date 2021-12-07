@@ -17,7 +17,7 @@ const routes = [
         component:MiFichaMedica
     },
     {
-        path:'/turno',
+        path:'/turnos',
         name:"turnos",
         component:Turno
     },
