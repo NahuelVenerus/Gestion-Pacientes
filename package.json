@@ -14,8 +14,10 @@
     "core-js": "^3.19.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "moment": "^2.29.1",
     "vue": "^3.2.22",
     "vue-router": "^4.0.12",
+    "vue3-datepicker": "^0.2.5",
     "vuex": "^4.0.2"
   },
   "devDependencies": {

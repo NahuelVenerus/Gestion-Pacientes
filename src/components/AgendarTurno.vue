@@ -1,0 +1,101 @@
+<template>
+  <div class="col">
+    <div
+      class="borde"
+    >
+      <div class="row" style="text-align: center">
+        <div class="col" style="margin: 1%; color: #4066d0">
+          <strong>Agendar un turno</strong>
+        </div>
+      </div>
+
+      <div class="row" id="placeholder" style="margin-top: 10px">
+        <div class="col-lg-2">
+          <label class="contactLabel">Fecha:</label>
+        </div>
+        <div class="col-lg-10">
+          <date-picker
+            v-model="date"
+            type="date"
+            class="form-control"
+          ></date-picker>
+        </div>
+      </div>
+
+      <Horarios :fecha="this.date" class="horarios"/>
+
+      <div>
+          <label class="contactLabel">Cometario:</label>
+          <textarea name="comentario-turno" id="" cols="20" rows="6" class="form-control" style="resize: none"></textarea>
+      </div>
+
+      <div class="row" style="margin-top: 20px">
+        <div class="col-sm-12 col-lg-12" style="margin-left: 40%">
+          <input
+            type="submit"
+            value="Enviar"
+            onclick="enviar()"
+            class="form-control"
+            id="boton"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import DatePicker from 'vue3-datepicker'
+import Horarios from './Horarios'
+import axios from 'axios'
+
+export default {
+    name: 'AgendarTurno',
+    components: {
+        DatePicker,
+        Horarios
+    },
+    methods: {
+      enviarDate() {
+        Horarios.date = this.date
+      },
+
+      async GET_TURNOS_PACIENTE(){
+      const res = await axios.get('http://localhost:3000/turnospaciente');
+      console.log(res)
+      if(res.status == 200){
+        this.turnosPaciente = res.data;
+      }else{
+        console.log("Trayendo turnos de pacientes")
+      }
+    }
+    },
+    data:() => {
+      return{
+          date: null,
+          turnosPaciente: []
+      }
+  },
+  mounted() {
+    this.GET_TURNOS_PACIENTE();
+  }
+};
+
+</script>
+
+<style>
+.horarios {
+    padding-left: 20%;
+}
+.borde {
+  border: 2px solid #4066d0;
+  padding: 2%;
+  border-radius: 5px;
+  height: 100%;
+}
+#boton {
+  width: 100px;
+  color: white;
+  background-color: #4066d0
+}
+</style>
