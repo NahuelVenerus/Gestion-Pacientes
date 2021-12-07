@@ -2,11 +2,11 @@
   <div id="app">
     <div
       class="container-fluid"
-      style="margin-top: 1.5%; padding: 2%"
+      id="container"
     >
       <div
         class="row"
-        style="margin-top: 1%; margin-bottom: 15%"
+        id="posicion"
       >
         <AgendarTurno />
 
@@ -62,5 +62,11 @@ export default {
   padding: 2%;
   border-radius: 5px;
   height: 100%;
+}
+#container {
+  padding: 2%;
+}
+#posicion {
+  padding-top: 3%;
 }
 </style>

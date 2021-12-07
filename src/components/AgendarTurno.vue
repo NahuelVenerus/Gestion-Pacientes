@@ -2,12 +2,6 @@
   <div class="col">
     <div
       class="borde"
-      style="
-        border: 2px solid #4066d0;
-        padding: 2%;
-        border-radius: 5px;
-        height: 100%;
-      "
     >
       <div class="row" style="text-align: center">
         <div class="col" style="margin: 1%; color: #4066d0">
@@ -42,7 +36,7 @@
             value="Enviar"
             onclick="enviar()"
             class="form-control"
-            style="width: 100px; color: white; background-color: #4066d0"
+            id="boton"
           />
         </div>
       </div>
@@ -83,5 +77,10 @@ export default {
   padding: 2%;
   border-radius: 5px;
   height: 100%;
+}
+#boton {
+  width: 100px;
+  color: white;
+  background-color: #4066d0
 }
 </style>
