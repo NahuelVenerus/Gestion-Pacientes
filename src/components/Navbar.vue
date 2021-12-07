@@ -29,11 +29,7 @@
 							>Agenda</router-link
 						>
 					</li>
-					<li class="nav-item">
-						<router-link class="nav-link active" to="/editarturno/1"
-							>Editar Turno</router-link
-						>
-					</li>
+
 					<li class="nav-item" v-if="IS_PROFESIONAL">
 						<router-link class="nav-link active" to="Pacientes"
 							>Pacientes</router-link
