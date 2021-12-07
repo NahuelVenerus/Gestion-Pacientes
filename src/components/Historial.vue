@@ -11,7 +11,9 @@
             </div>
         </div>
     </div>
-   
+   {
+
+   }
 </template>
 <style scoped>
 .Historial{
@@ -29,6 +31,7 @@ export default {
     titulo: String,
   },
   mounted(){
+     
       this.GET_HISTORIAL_ACTIONS()
   }
   ,

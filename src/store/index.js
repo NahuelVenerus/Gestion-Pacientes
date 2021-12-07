@@ -30,12 +30,12 @@ const store = createStore({
       }else{
         const payload = {
           loading:false,
+          error:data.error
         }
         context.commit("SET_ERROR_CALL", payload);
       }
       
-      
-      
+
     }
   },
   getters:{
@@ -49,6 +49,7 @@ const store = createStore({
     },
     SET_ERROR_CALL (state, payload){
       state.loading = payload.loading;
+      state.error = payload.error;
     }
   }
 })
