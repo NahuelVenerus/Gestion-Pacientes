@@ -7,7 +7,8 @@ import Login from './views/Login';
 import EditarTurno from './views/EditarTurno';
 import Turno from './views/Turno';
 import Contador from './views/Contador';
-
+import Pacientes from './views/Pacientes';
+import Turnos from './views/Turnos';
 const routes = [
     {
         path:'/',
@@ -43,7 +44,17 @@ const routes = [
         path:'/contadores',
         name:"contadores",
         component:Contador
-    }
+    },
+    {
+        path:'/pacientes',
+        name:"pacientes",
+        component:Pacientes
+    },
+    {
+        path:'/turnos',
+        name:"turnos",
+        component:Turnos
+    },
 ]
 const router = createRouter({
     // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
