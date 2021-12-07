@@ -5,7 +5,8 @@ import MiFichaMedica from './views/MiFichaMedica';
 import Agenda from './views/Agenda';
 import Login from './views/Login';
 import EditarTurno from './views/EditarTurno';
-
+import Turno from './views/Turno';
+import Contador from './views/Contador';
 
 const routes = [
     {
@@ -32,6 +33,16 @@ const routes = [
         path:'/editarturno/:id',
         name:"editarturno",
         component:EditarTurno
+    },
+    {
+        path:'/turno',
+        name:"turnos",
+        component:Turno
+    },
+    {
+        path:'/contadores',
+        name:"contadores",
+        component:Contador
     }
 ]
 const router = createRouter({
