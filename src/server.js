@@ -26,9 +26,9 @@ const historial = [
 const turnosPaciente = [
     {
         id:'1',
-        fecha: moment("2021-12-07"),
-        horarioInicio: '9:00',
         idPaciente: 100,
+        fecha: moment("2021-12-08"),
+        hora: '9:00',
         descripcion: 'Fiebre'
     }
 ];

@@ -29,12 +29,13 @@ export default {
     }
 
     .activa {
-        background-color: rgb(5, 238, 5);
-        border: 3px solid rgb(5, 238, 5);
+        background-color: #4066d0;
+        border: 3px solid #4066d0;
+        color: white;
     }
 
     .activa:hover {
-        border: 3px solid rgb(0, 124, 0);
+        border: 3px solid #284083;
     }
 
     .desactivada {
