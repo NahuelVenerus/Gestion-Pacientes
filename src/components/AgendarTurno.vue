@@ -31,21 +31,25 @@
               v-for="ItemHorario in horarios"
               :key="ItemHorario.id"
               :estado="ItemHorario.estado"
-            />
+              @itemHorario="horario = $event"
+            >
+            </ItemHorario>
+            
           </div>
         </div>
       </div>
 
       <div>
-        <label class="contactLabel">Cometario:</label>
-        <textarea
+        <label class="contactLabel">Comentario:</label>
+        <input type="text"
           name="comentario-turno"
           id=""
           cols="20"
           rows="6"
           class="form-control"
           style="resize: none"
-        ></textarea>
+          v-model="this.comentario"
+        />
       </div>
 
       <div class="row" style="margin-top: 20px">
@@ -75,6 +79,7 @@ export default {
     DatePicker,
     ItemHorario,
   },
+
   methods: {
     async GET_TURNOS_PACIENTE() {
       const res = await axios.get("http://localhost:3000/turnospaciente");
@@ -95,11 +100,12 @@ export default {
 
       this.horarios[index].estado = "desactivado";
     },
+
     crearListaHorarios() {
       if (this.date == null) {
-        alert("Seleccione una fecha");
-      } else if (this.date <= this.hoy) {
-        alert("Seleccione una fecha posterior a hoy");
+        alert("Seleccione una fecha para su turno");
+      } else if (moment(this.date) <= moment(this.hoy)) {
+        alert("Seleccione una fecha posterior a hoy para su turno");
         for (let index = 0; index < this.horarios.length; index++) {
           this.horarios[index].estado = "desactivado";
         }
@@ -108,19 +114,23 @@ export default {
         for (let index = 0; index < this.horarios.length; index++) {
           this.horarios[index].estado = "activo";
         }
+
         for (let index = 0; index < this.turnosPaciente.length; index++) {
-          if (this.turnosPaciente[index].fecha == moment(this.fecha)) {
+          if (moment(this.turnosPaciente[0].fecha).format("YYYY-MM-DD") == moment(this.date).format("YYYY-MM-DD")) {
             this.desactivarHorario(this.turnosPaciente[index].hora);
           }
         }
       }
     },
   },
+
   data: () => {
     return {
       date: null,
       hoy: new Date(),
       turnosPaciente: [],
+      horario: '321',
+      comentario: '',
       horarios: [
         {
           id: "1",
