@@ -87,6 +87,11 @@ const turnosPaciente = [
         estado:"Pendiente"
     }
 ];
+const tablero = {
+    Usuarios: 5,
+    Turnos: 8,
+    TurnosCancelados: 5
+}
 
 app.get('/login', (req,res) => {
     const {dni, password} = req.headers;
@@ -115,6 +120,9 @@ app.get('/login', (req,res) => {
 })
 app.get('/turnospaciente', (req,res) => {
     res.json(turnosPaciente)
+})
+app.get('/tablero', (req,res) => {
+    res.json(tablero)
 })
 app.get('/turnospaciente/:idpaciente', (req,res) => {
     res.json(turnosPaciente)

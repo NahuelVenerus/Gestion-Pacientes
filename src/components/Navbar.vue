@@ -40,11 +40,14 @@
 							>Turnos</router-link
 						>
 					</li>
-					<!-- <li class="nav-item">
-						<router-link class="nav-link active" to="contadores"
+					<li class="nav-item">
+						<router-link
+							class="nav-link active"
+							to="contadores"
+							v-if="IS_PROFESIONAL"
 							>Contadores/Graficos</router-link
 						>
-					</li> -->
+					</li>
 					<!-- <li class="nav-item dropdown">
 						<a
 							class="nav-link dropdown-toggle"
